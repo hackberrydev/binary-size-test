@@ -1,0 +1,12 @@
+services:
+  binary-size-test:
+    build:
+      context: .
+      args:
+        JANET_VERSION: 1.28.0
+        JPM_VERSION: v1.1.0
+    container_name: binary-size-test
+    image: binary-size-test:1.0
+    tty: true
+    volumes:
+      - .:/home/binary-size-test
