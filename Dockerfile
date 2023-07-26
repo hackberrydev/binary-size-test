@@ -1,5 +1,6 @@
 FROM debian:bookworm
 
+ARG JANET_VERSION
 ARG JPM_VERSION
 
 RUN apt update && apt install -y git make build-essential libssl-dev wget
@@ -7,6 +8,8 @@ RUN apt update && apt install -y git make build-essential libssl-dev wget
 RUN mkdir -p /home/janet
 
 RUN cd /home/janet && git clone https://github.com/janet-lang/janet.git
+
+RUN cd /home/janet/janet && git pull && git reset --hard $JANET_VERSION
 
 RUN cd /home/janet/janet && make
 

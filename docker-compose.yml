@@ -3,6 +3,7 @@ services:
     build:
       context: .
       args:
+        JANET_VERSION: 080b37cb3128c1cc5a3912476892c2444930fc71
         JPM_VERSION: v1.1.0
     container_name: binary-size-test
     image: binary-size-test:1.0
